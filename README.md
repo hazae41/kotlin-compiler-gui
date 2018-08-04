@@ -11,7 +11,7 @@ Easily compile .kt and .kts files to class files
 
 ### Video
 
-[![YouTube Video](https://img.youtube.com/vi/7ZBRpbX_dRM/0.jpg)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
+[![YouTube Video](https://i.imgur.com/WmICRnK.png)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
 
 ### Download
 
