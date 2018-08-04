@@ -3,7 +3,9 @@ Easily compile .kt and .kts files to class files
 
 ### Features
 
-- Compile Kotlin and KotlinScript
+- Compile Kotlin classes
+
+- Run KotlinScripts
 
 - Drag and Drop
 
@@ -12,6 +14,10 @@ Easily compile .kt and .kts files to class files
 ### Video
 
 [![YouTube Video](https://i.imgur.com/WmICRnK.png)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
+
+### Libraries
+
+You can use libraries, put your .jar files in a "libs" folder at the same location as the compiler.
 
 ### Download
 
