@@ -39,6 +39,6 @@ You can use libraries, put your .jar files in a "libs" folder at the same locati
 
 ### Download
 
-- [Windows](https://github.com/RHazDev/Kotlin-Compiler-GUI/releases/download/1.0/kotlin-compiler-gui-1.0.exe)
+- [Windows](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/exe/kotlin-compiler-gui-1.1.exe)
 
-- [Linux, MacOS, Other](https://github.com/RHazDev/Kotlin-Compiler-GUI/releases/download/1.0/kotlin-compiler-gui-1.0.jar)
+- [Linux, MacOS, Other](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/jar/kotlin-compiler-gui-1.1.jar)
