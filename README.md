@@ -25,7 +25,7 @@ Easily compile Kotlin classes (.kt) and run Kotlin scripts (.kts)
 
 ### Video
 
-[![YouTube Video](https://i.imgur.com/WmICRnK.png)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
+[Kotlin Compiler GUI #1 : Drag and Drop](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
 
 ### Libraries
 
