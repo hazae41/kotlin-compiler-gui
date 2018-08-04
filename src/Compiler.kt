@@ -109,8 +109,8 @@ class KotlinCompiler : Application() {
         ?.split(File.pathSeparator)?.map(::File)
         ?.toMutableList()?.apply{addAll(File("libs").listFiles())}
 
-    val run = Button("Run")
-    val toclass = Button("Compile to class")
+    var run = Button("")
+    var toclass = Button("")
 
     val processing: StackPane.(() -> Unit) -> Unit = {
 
@@ -168,14 +168,10 @@ class KotlinCompiler : Application() {
         if(types.none{file.name.endsWith(it)}) return@content
         status.text = file.name
         children.remove(hint)
+        children.remove(run)
+        children.remove(toclass)
 
-        if(file.name.endsWith(".kts"))
-            children.add(run);
-
-        else
-            children.add(toclass)
-
-        run.apply {
+        run = Button("Run").apply {
             translateY = 20.0
             style = "-fx-background-color: white";
             setOnAction {
@@ -205,7 +201,7 @@ class KotlinCompiler : Application() {
             }
         }
 
-        toclass.apply {
+        toclass = Button("Compile to class").apply {
             translateY = 20.0
             style = "-fx-background-color: white";
             setOnAction {
@@ -269,6 +265,13 @@ class KotlinCompiler : Application() {
 
                 }
             }
+        }
+
+        Platform.runLater {
+            if (file.name.endsWith(".kts"))
+                children.add(run);
+            else
+                children.add(toclass)
         }
     }
 

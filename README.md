@@ -1,23 +1,35 @@
 # Kotlin-Compiler-GUI
-Easily compile .kt and .kts files to class files
+Easily compile Kotlin classes and run Kotlin scripts
 
 ### Features
 
 - Compile Kotlin classes
 
-- Run KotlinScripts
+- Run Kotlin scripts
 
-- Drag and Drop
+- Supports libraries for both compilation and running
+
+- Do it as fast as the light with Drag and Drop support
 
 - Clean & Minimalist UI
 
-### Video
+### Screenshots
+
+![](https://i.imgur.com/419IzJ2.png)
+
+![](https://i.imgur.com/JHbWIPl.png)
+
+![](https://i.imgur.com/MuQifOo.png)
+
+![](https://i.imgur.com/8hTCuCU.png)
 
 [![YouTube Video](https://i.imgur.com/WmICRnK.png)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
 
 ### Libraries
 
 You can use libraries, put your .jar files in a "libs" folder at the same location as the compiler.
+
+![](https://i.imgur.com/UItJsnP.png)
 
 ### Download
 
