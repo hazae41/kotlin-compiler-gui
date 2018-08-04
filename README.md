@@ -33,6 +33,8 @@ You can use libraries, put your .jar files in a "libs" folder at the same locati
 
 ![](https://i.imgur.com/UItJsnP.png)
 
+----
+
 ![](https://i.imgur.com/uIFRrpU.png)
 
 ### Download
