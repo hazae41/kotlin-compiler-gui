@@ -1,5 +1,5 @@
 # Kotlin-Compiler-GUI
-Easily compile Kotlin classes and run Kotlin scripts
+Easily compile Kotlin classes (.kt) and run Kotlin scripts (.kts)
 
 ### Features
 
@@ -23,6 +23,8 @@ Easily compile Kotlin classes and run Kotlin scripts
 
 ![](https://i.imgur.com/8hTCuCU.png)
 
+### Video
+
 [![YouTube Video](https://i.imgur.com/WmICRnK.png)](https://www.youtube.com/watch?v=7ZBRpbX_dRM)
 
 ### Libraries
@@ -30,6 +32,8 @@ Easily compile Kotlin classes and run Kotlin scripts
 You can use libraries, put your .jar files in a "libs" folder at the same location as the compiler.
 
 ![](https://i.imgur.com/UItJsnP.png)
+
+![](https://i.imgur.com/uIFRrpU.png)
 
 ### Download
 
