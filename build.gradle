@@ -1,0 +1,48 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+
+    repositories { mavenCentral() }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'javafx-gradle-plugin'
+
+group 'fr.rhaz.kotlin'
+version '1.2'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.60"
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-compiler-embeddable', version: '1.2.60'
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-script-util', version: '1.2.60'
+    compile "org.jetbrains.kotlin:kotlin-script-runtime:1.2.60"
+}
+
+jar {
+    manifest { attributes('Main-Class': 'fr.rhaz.kotlin.CompilerKt') }
+    destinationDir = file("$rootDir/jar")
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}
+
+processResources {
+    with copySpec { from 'resources' }
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src'
+    test.kotlin.srcDirs += 'test'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
