@@ -7,9 +7,11 @@ import javafx.geometry.Pos
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.control.TextArea
 import javafx.scene.image.Image
 import javafx.scene.input.ClipboardContent
 import javafx.scene.input.TransferMode
+import javafx.scene.layout.Background
 import javafx.scene.layout.StackPane
 import javafx.scene.layout.VBox
 import javafx.scene.text.Font
@@ -27,6 +29,7 @@ import org.jetbrains.kotlin.config.Services
 import org.jetbrains.kotlin.script.jsr223.KotlinJsr223JvmLocalScriptEngine
 import org.jetbrains.kotlin.script.jsr223.KotlinJsr223JvmLocalScriptEngineFactory
 import org.jetbrains.kotlin.script.jsr223.KotlinStandardJsr223ScriptTemplate
+import org.jetbrains.kotlin.utils.addIfNotNull
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileReader
@@ -99,15 +102,22 @@ class KotlinCompiler : Application() {
 
     fun engine() = KotlinJsr223JvmLocalScriptEngine(
         KotlinJsr223JvmLocalScriptEngineFactory(),
-        classPath ?: File("libs").listFiles().toList(),
+        classPath ?: libs,
         KotlinStandardJsr223ScriptTemplate::class.qualifiedName!!,
-        { ctx, types -> ScriptArgsWithTypes(arrayOf(ctx.getBindings(ScriptContext.ENGINE_SCOPE)), types ?: emptyArray()) },
+        {ctx, types -> ScriptArgsWithTypes(arrayOf(ctx.getBindings(ScriptContext.ENGINE_SCOPE)), types ?: emptyArray()) },
         arrayOf(Bindings::class)
     )
 
-    val classPath = System.getProperty("kotlin.script.classpath")
-        ?.split(File.pathSeparator)?.map(::File)
-        ?.toMutableList()?.apply{addAll(File("libs").listFiles())}
+    val classPath
+        get() = System.getProperty("kotlin.script.classpath")
+            ?.split(File.pathSeparator)?.map(::File)
+            ?.toMutableList()?.apply{addAll(libs)}
+
+    val libs
+        get() = mutableListOf(jar).apply{addAll(File("libs").takeIf{it.exists()}?.listFiles() ?: emptyArray())}
+
+    val jar
+        get() = File(System.getProperty("java.class.path"))
 
     var run = Button("")
     var toclass = Button("")
@@ -145,7 +155,13 @@ class KotlinCompiler : Application() {
             alignment = Pos.CENTER
             padding = Insets(15.0)
 
-            Label(msg).also {children.add(it)}
+            TextArea(msg).apply {
+                style = "-fx-background-color: transparent; -fx-background-insets: 0px";
+                padding = Insets(0.0, 0.0, 16.0, 0.0)
+                isWrapText = true
+                isEditable = false
+                background = Background.EMPTY
+            }.also {children.add(it)}
 
             Button("Close").apply {
                 style = "-fx-background-color: white";
@@ -213,8 +229,6 @@ class KotlinCompiler : Application() {
                     val stream = PrintStream(log)
                     val msgs = PrintingMessageCollector(stream, MessageRenderer.WITHOUT_PATHS, true)
 
-                    val libs = File("./libs").listFiles().map { it.path }
-
                     val result = K2JVMCompiler().run {
                         val args = K2JVMCompilerArguments().apply {
                             freeArgs = listOf(file.absolutePath)
@@ -222,7 +236,7 @@ class KotlinCompiler : Application() {
                             classpath = System.getProperty("java.class.path")
                                         .split(System.getProperty("path.separator"))
                                         .filter{File(it).exists() && File(it).canRead()}
-                                        .toMutableList().apply{addAll(libs)}
+                                        .toMutableList().apply{addAll(libs.map{it.path})}
                                         .joinToString(System.getProperty("path.separator")).also { println(it) }
                             noStdlib = true
                             noReflect = true
