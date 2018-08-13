@@ -49,7 +49,7 @@ class KotlinCompiler : Application() {
         window.apply(Window).apply { show() }
     }
 
-    lateinit var window: Stage;
+    lateinit var window: Stage
 
     val icon
         get() = KotlinCompiler::class.java.classLoader.getResourceAsStream("icon.png")
@@ -71,8 +71,8 @@ class KotlinCompiler : Application() {
         scene = Scene(StackPane().apply(Content), minWidth, minHeight)
     }
 
-    var status = Label();
-    var hint = Label();
+    var status = Label()
+    var hint = Label()
 
     val chooser = FileChooser().apply {
         ExtensionFilter("All Kotlin Files", "*.kt", "*.kts").also{extensionFilters.add(it)}
@@ -82,7 +82,7 @@ class KotlinCompiler : Application() {
 
         status.apply {
             text = "Choose a file"
-            font = Font.font(30.0);
+            font = Font.font(30.0)
             translateY = -20.0
         }.also { children.add(it); }
 
@@ -138,7 +138,7 @@ class KotlinCompiler : Application() {
         val process = async(it)
 
         Button("X").apply {
-            style = "-fx-background-color: transparent";
+            style = "-fx-background-color: transparent"
             minWidth = 40.0
             minHeight = 40.0
             translateX = 180.0
@@ -156,7 +156,7 @@ class KotlinCompiler : Application() {
             padding = Insets(15.0)
 
             TextArea(msg).apply {
-                style = "-fx-background-color: transparent; -fx-background-insets: 0px";
+                style = "-fx-background-color: transparent; -fx-background-insets: 0px"
                 padding = Insets(0.0, 0.0, 16.0, 0.0)
                 isWrapText = true
                 isEditable = false
@@ -164,7 +164,7 @@ class KotlinCompiler : Application() {
             }.also {children.add(it)}
 
             Button("Close").apply {
-                style = "-fx-background-color: white";
+                style = "-fx-background-color: white"
                 setOnAction { dialog.close() }
             }.also { children.add(it) }
         }
@@ -189,7 +189,7 @@ class KotlinCompiler : Application() {
 
         run = Button("Run").apply {
             translateY = 20.0
-            style = "-fx-background-color: white";
+            style = "-fx-background-color: white"
             setOnAction {
                 processing {
                     engine().apply {
@@ -205,7 +205,7 @@ class KotlinCompiler : Application() {
                             listOf(ex.localizedMessage, "Error!")
                         }
 
-                        System.setOut(old);
+                        System.setOut(old)
 
                         Platform.runLater {
                             this@KotlinCompiler.status.text = status
@@ -219,7 +219,7 @@ class KotlinCompiler : Application() {
 
         toclass = Button("Compile to class").apply {
             translateY = 20.0
-            style = "-fx-background-color: white";
+            style = "-fx-background-color: white"
             setOnAction {
 
                 processing {
@@ -246,7 +246,7 @@ class KotlinCompiler : Application() {
                         execImpl(msgs, Services.EMPTY, args)
                     }.code
 
-                    stream.close();
+                    stream.close()
 
                     Platform.runLater {
 
@@ -255,7 +255,7 @@ class KotlinCompiler : Application() {
                             else -> "Error!".also {
                                 children.remove(hint)
                                 Button("Show logs").apply {
-                                    style = "-fx-background-color: white";
+                                    style = "-fx-background-color: white"
                                     translateY = 20.0
                                     setOnAction {
                                         Files.lines(log.toPath()).apply {
@@ -283,7 +283,7 @@ class KotlinCompiler : Application() {
 
         Platform.runLater {
             if (file.name.endsWith(".kts"))
-                children.add(run);
+                children.add(run)
             else
                 children.add(toclass)
         }
