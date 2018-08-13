@@ -29,9 +29,9 @@
 
 ### Download
 
-- [Windows](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/exe/kotlin-compiler-gui-1.1.exe)
+- [Windows](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/exe/kotlin-compiler-gui-1.2.exe)
 
-- [Linux, MacOS, Other](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/jar/kotlin-compiler-gui-1.1.jar)
+- [Linux, MacOS, Other](https://github.com/RHazDev/Kotlin-Compiler-GUI/raw/master/jar/kotlin-compiler-gui-1.2.jar)
 
 ### Screenshots
 
