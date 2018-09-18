@@ -1,5 +1,5 @@
 <h2 align="center">
-    <img src="https://i.imgur.com/tkr4fcd.png"/>
+    <img alt="Kotlin Compiler GUI" src="https://i.imgur.com/tkr4fcd.png"/>
     <br>
     :zap: Quickly compile Kotlin classes (.kt) and run Kotlin scripts (.kts) :zap:
     <br>
