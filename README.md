@@ -6,7 +6,7 @@
     <br>
 </h3>
 
-[![](https://i.imgur.com/dhxagpE.png)](https://steemit.com/ipfs/@hazae41/)
+[![](https://i.imgur.com/dhxagpE.png)](https://steemit.com/kotlin/@hazae41/kotlin-compiler-gui-quickly-compile-kotlin-classes-and-run-kotlin-scripts)
 [![](https://i.imgur.com/iolftLK.png)](https://github.com/RHazDev/Kotlin-Compiler-GUI)
 
 <hr>
