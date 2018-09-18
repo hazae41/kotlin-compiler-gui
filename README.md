@@ -1,19 +1,23 @@
-<h2 align="center">
+<h3 align="center">
     <img alt="Kotlin Compiler GUI" src="https://i.imgur.com/tkr4fcd.png"/>
     <br>
     :zap: Quickly compile Kotlin classes (.kt) and run Kotlin scripts (.kts) :zap:
     <br>
     <br>
-</h2>
+</h3>
 
-<p align="center">
+[![](https://i.imgur.com/dhxagpE.png)](https://steemit.com/ipfs/@hazae41/)
+[![](https://i.imgur.com/iolftLK.png)](https://github.com/RHazDev/Kotlin-Compiler-GUI)
+
+<hr>
+<h3 align="center">
   <a href="#features">Features</a> •
   <a href="#download">Download</a> •
   <a href="#screenshots">Screenshots</a> •
   <a href="#video">Video</a> •
   <a href="#libraries">Libraries</a>
-</p>
-<h2></h2>
+</h3>
+<hr>
 
 ### Features
 
