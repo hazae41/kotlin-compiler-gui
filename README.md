@@ -7,10 +7,10 @@
 </h2>
 
 <p align="center">
-  <a href="#features">Features</a> ♦
-  <a href="#download">Download</a> ♦
-  <a href="#screenshots">Screenshots</a> ♦
-  <a href="#video">Video</a> ♦
+  <a href="#features">Features</a> •
+  <a href="#download">Download</a> •
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#video">Video</a> •
   <a href="#libraries">Libraries</a>
 </p>
 <h2></h2>
