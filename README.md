@@ -62,3 +62,7 @@ You can use libraries, put your .jar files in a "libs" folder at the same locati
 ----
 
 ![](https://i.imgur.com/uIFRrpU.png)
+
+## Join us!
+You can help the development of this project by contributing to it on GitHub, or join our Discord in order to talk about new features, bugs, or general stuff, ...
+<h3 align=center><a href="https://discord.gg/ttVYe8S"><img src="https://i.imgur.com/aT9BaNV.png"/></a></h3>
