@@ -22,9 +22,7 @@
 ##### Kotlin Compiler GUI is a software that allows you to compile Kotlin classes and run Kotlin scripts very quickly using drag-n-drop
 It is a simple Graphical User Interface version of the [command-line Kotlin compiler](https://kotlinlang.org/docs/tutorials/command-line.html) and the [Kotlin script engine](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-script-util/src/main/kotlin/org/jetbrains/kotlin/script/jsr223/KotlinJsr223ScriptEngineFactoryExamples.kt)
 
-You can create plugins for [IPFS-Manager](https://github.com/RHazDev/IPFS-Manager#scripting) for example or run simple tasks that returns a result
 It does not include interactions with scripts, it only displays the output in a window
-This tool aims a development usage, it should not be used by end-users
 
 ### Features
 - Compile Kotlin classes (.kt files &#10132; .class files)
